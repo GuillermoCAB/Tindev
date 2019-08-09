@@ -10,7 +10,7 @@ module.exports = {
 
         if(!taggedUser){ return res.status(400).json({ error: "Dev não cadastrado" })};
 
-        if(taggedUser.likes.includes(loggedUser._id)){ return console.log('DEU MATCH')};
+        if(taggedUser.likes.includes(loggedUser._id)){ console.log('DEU MATCH')};
 
         loggedUser.likes.push(taggedUser._id);
 

@@ -11,10 +11,12 @@ module.exports = {
 
         const response = await axios.get(`https://api.github.com/users/${username}`);
 
-        const { name , bio, avatar_url: avatar } = response.data;
+        const { name, bio, avatar_url: avatar } = response.data;
+
+        const nameFiller = name || 'NoNameUser'
 
         const dev = await Dev.create({
-            name,
+            name: nameFiller,
             user: username,
             bio,
             avatar
